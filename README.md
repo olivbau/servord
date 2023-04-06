@@ -62,8 +62,8 @@ caddy hash-password --plaintext 'my_password'
 # Set host
 nano .env
 
-# Run caddy server
-caddy run
+# Start caddy server
+caddy start
 
 # Run caddy server
 caddy stop
@@ -78,6 +78,9 @@ screen -ls
 # Attach to a screen session
 screen -r servord-bitcoind
 screen -r servord-server
+
+# Kill a screen session
+screen -X -S servord-bitcoind quit
 
 # Detach from a screen session
 # ctrl + a + d
