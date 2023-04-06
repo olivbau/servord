@@ -60,7 +60,10 @@ export ORD_HOST="mydomain.com"
 export ORD_BASIC_AUTH="my_username $(caddy hash-password --plaintext 'my_password')"
 
 # Run caddy server
-caddy run --config Caddyfile
+caddy run
+
+# Run caddy server
+caddy stop
 
 # Detach from a screen session
 # ctrl + a + d
@@ -73,8 +76,8 @@ caddy run --config Caddyfile
 screen -ls
 
 # Attach to a screen session
-screen -r servord-server
 screen -r servord-bitcoind
+screen -r servord-server
 screen -r servord-caddy
 
 # Detach from a screen session
