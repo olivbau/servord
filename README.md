@@ -63,7 +63,7 @@ caddy hash-password --plaintext 'my_password'
 nano .env
 
 # Start caddy server
-caddy start
+caddy start --config Caddyfile --envfile .env
 
 # Run caddy server
 caddy stop
