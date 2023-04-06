@@ -52,21 +52,21 @@ screen -S servord-server
 ## Run caddy
 
 ```bash
-# Start a screen session
-screen -S servord-caddy
-
 # Set environment variables
-export ORD_HOST="mydomain.com"
-export ORD_BASIC_AUTH="my_username $(caddy hash-password --plaintext 'my_password')"
+cp .env.example .env
+
+# Generate passwords for basic auth
+caddy hash-password --plaintext 'my_password'
+
+# Set users and passwords for basic auth
+# Set host
+nano .env
 
 # Run caddy server
 caddy run
 
 # Run caddy server
 caddy stop
-
-# Detach from a screen session
-# ctrl + a + d
 ```
 
 ## Useful commands
@@ -78,7 +78,6 @@ screen -ls
 # Attach to a screen session
 screen -r servord-bitcoind
 screen -r servord-server
-screen -r servord-caddy
 
 # Detach from a screen session
 # ctrl + a + d

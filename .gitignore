@@ -2,3 +2,6 @@
 .vs/
 .vscode/
 .idea/
+
+# .env file
+.env
