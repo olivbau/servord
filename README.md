@@ -60,7 +60,7 @@ export ORD_HOST="mydomain.com"
 export ORD_BASIC_AUTH="my_username $(caddy hash-password --plaintext 'my_password')"
 
 # Run caddy server
-caddy run --config ./Caddyfile
+caddy run --config Caddyfile
 
 # Detach from a screen session
 # ctrl + a + d
