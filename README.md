@@ -11,7 +11,7 @@ A simple ord server setup for a VPS.
 
 ## Setup UFW
 ```bash
-ufw allow ssh && allow http && allow https
+ufw allow ssh && ufw allow http && ufw allow https
 ufw deny 8080 && ufw deny 8332 && ufw deny 28332 && ufw deny 28333
 ufw enable
 
