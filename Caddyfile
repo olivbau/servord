@@ -1,0 +1,6 @@
+{$ORD_HOST} {
+        basicauth /* {
+                {$ORD_BASIC_AUTH}
+        }
+        reverse_proxy :8080
+}
