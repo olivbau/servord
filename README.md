@@ -21,14 +21,8 @@ ufw status
 ## Run bitcoin daemon
 
 ```bash
-# Start a screen session
-screen -S servord-bitcoind
-
 # Run bitcoin daemon
-bitcoin-core.daemon -chain=main -server -txindex -prune=0 -port=8333 -rpcport=8332
-
-# Detach from a screen session
-# ctrl + a + d
+bitcoin-core.daemon -daemon -daemonwait -chain=main -server -txindex -prune=0 -port=8333 -rpcport=8332
 ```
 
 Location of bitcoin data dir and cookie file are:
@@ -76,11 +70,10 @@ caddy stop
 screen -ls
 
 # Attach to a screen session
-screen -r servord-bitcoind
 screen -r servord-server
 
 # Kill a screen session
-screen -X -S servord-bitcoind quit
+screen -X -S servord-server quit
 
 # Detach from a screen session
 # ctrl + a + d
