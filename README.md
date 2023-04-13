@@ -23,6 +23,9 @@ ufw status
 ```bash
 # Run bitcoin daemon
 bitcoin-core.daemon -daemon -daemonwait -chain=main -server -txindex -prune=0 -port=8333 -rpcport=8332
+
+# Stop bitcoin daemon
+bitcoin-core.cli stop
 ```
 
 Location of bitcoin data dir and cookie file are:
@@ -38,6 +41,9 @@ screen -S servord-server
 
 # Run ord server
 /root/bin/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
+
+# Using the ord build from source
+# ./target/release/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
 
 # Detach from a screen session
 # ctrl + a + d
