@@ -40,10 +40,10 @@ Location of bitcoin data dir and cookie file are:
 screen -S servord-server
 
 # Run ord server
-/root/bin/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
+/root/bin/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080 --enable-json-api
 
 # Using the ord build from source
-# ./target/release/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
+# ./target/release/ord --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080 --enable-json-api
 
 # Detach from a screen session
 # ctrl + a + d
