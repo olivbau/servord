@@ -4,12 +4,13 @@ A simple ord server setup for a VPS.
 
 ## Prerequisites
 
-* `apt update && apt upgrade -y && apt install -y git snapd screen && snap install bitcoin-core`
-* `git clone https://github.com/olivbau/servord && cd servord`
-* Install caddy: https://caddyserver.com/docs/install
-* Install ord: https://github.com/casey/ord#installation
+- `apt update && apt upgrade -y && apt install -y git snapd screen && snap install bitcoin-core`
+- `git clone https://github.com/olivbau/servord && cd servord`
+- Install caddy: https://caddyserver.com/docs/install
+- Install ord: https://github.com/casey/ord#installation
 
 ## Setup UFW
+
 ```bash
 ufw allow ssh && ufw allow http && ufw allow https
 ufw deny 8080 && ufw deny 8332 && ufw deny 28332 && ufw deny 28333
@@ -29,9 +30,9 @@ bitcoin-core.cli stop
 ```
 
 Location of bitcoin data dir and cookie file are:
-* ~/snap/bitcoin-core/common/.bitcoin
-* ~/snap/bitcoin-core/common/.bitcoin/.cookie
 
+- ~/snap/bitcoin-core/common/.bitcoin
+- ~/snap/bitcoin-core/common/.bitcoin/.cookie
 
 ## Run ord server
 
@@ -40,7 +41,7 @@ Location of bitcoin data dir and cookie file are:
 screen -S servord-server
 
 # Run ord server
-/root/bin/ord --enable-json-api --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
+/root/bin/ord --enable-json-api --index-sats --first-inscription-height 767430 --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
 
 # Using the ord build from source
 # ./target/release/ord --enable-json-api --index-sats --bitcoin-data-dir ~/snap/bitcoin-core/common/.bitcoin server --address 127.0.0.1 --http-port 8080
